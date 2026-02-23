@@ -6,6 +6,7 @@ FastAPI backend for the E-Commerce Order Tracker demo workload.
 
 ```
 Frontend (App Service)  →  API Management  →  Backend (AKS)
+                                                ├── /api/about
                                                 ├── /api/products
                                                 ├── /api/orders
                                                 ├── /api/inventory
@@ -32,6 +33,7 @@ API docs available at http://localhost:8000/api/docs
 
 | Method | Path                        | Description                |
 | ------ | --------------------------- | -------------------------- |
+| GET    | /api/about                  | Service info & metadata    |
 | GET    | /api/health                 | Service health check       |
 | GET    | /api/products               | List products (paginated)  |
 | GET    | /api/products/categories    | List categories            |
