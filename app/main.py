@@ -11,7 +11,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
 from app.telemetry import setup_telemetry
-from app.routers import products, orders, inventory, health
+from app.routers import products, orders, inventory, health, about
 
 # ─── Logging ──────────────────────────────────────────────────────────────────
 
@@ -75,6 +75,7 @@ async def correlation_and_timing(request: Request, call_next):
 # ─── Routers ─────────────────────────────────────────────────────────────────
 
 app.include_router(health.router, prefix="/api")
+app.include_router(about.router, prefix="/api")
 app.include_router(products.router, prefix="/api")
 app.include_router(orders.router, prefix="/api")
 app.include_router(inventory.router, prefix="/api")
